@@ -1,8 +1,4 @@
-// Welcome to your new AL extension.
-// Remember that object names and IDs should be unique across all extensions.
-// AL snippets start with t*, like tpageext - give them a try and happy coding!
-
-// The factbox part that should be added.
+/*
 page 50100 CustInfoFactBox
 {
     PageType = CardPart;
@@ -40,3 +36,25 @@ pageextension 50110 MyExtension extends "Customer Card"
         // Add changes to page actions here
     }
 }
+*/
+
+page 50110 SimpleCustomerCard 
+{ 
+    PageType = Card; 
+    SourceTable = Customer; 
+    UsageCategory = Documents;  
+    AccessByPermission = page SimpleCustomerCard = X;
+    ApplicationArea = All;
+    layout 
+    { 
+        area(content) 
+        { 
+            group(General) 
+            { 
+                field("No.";"No.") {} 
+                field(Name;Name) {} 
+                field(Address;Address) {} 
+            } 
+        } 
+    } 
+} 
